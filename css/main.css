@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Clicker+Script&family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap');
+:root{
+
+/* ## Colors */
+
+/* ### Primary */
+
+--Dark-cyan: hsl(158, 36%, 37%);
+--cream: hsl(30, 38%, 92%);
+
+/* ### Neutral */
+
+--Very-dark-blue: hsl(212, 21%, 14%);
+--Dark-grayish-blue: hsl(228, 12%, 48%);
+--White: hsl(0, 0%, 100%);
+
+--para-font-size: 14px;
+
+/* ### Font */
+
+--font-family-body: 'Montserrat', sans-serif;
+--font-Weights-500: 500; 
+--font-Weights-700: 700; 
+
+--font-family-Heading: 'Fraunces', serif;
+
+}
+
+/* body Background */
+body{
+    background-color: var(--cream);
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-div{
+    /* background-color: red; */
+    display: flex;
+    height: 480px;
+    width: 640px;
+    background-color: white;
+    border-radius: 10px;
+    
+}
+
+
+.card-image-container{
+    width: 50%;
+    border-radius: 10px;
+}
+.card-info{
+    width: 50%;
+
+
+}
+
+.card-image-container img{
+    max-width: 100%;
+    max-height: 100%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    /* object-fit: fill; */
+}
+
+.item-category{
+    font-family: var(--font-family-body);
+    color: var(--Dark-grayish-blue);
+    margin-left: 30px;
+    margin-right: 30px;
+    letter-spacing: 3px;
+    margin-top: 35px;
+    font-size: 14px;
+}
+.item-name{
+    font-family: var(--font-family-Heading);
+    width: 76%;
+    padding-right: 20px;
+    margin-left: 30px;
+    margin-right: 30px;
+
+}
+.item-info{
+    font-family: var(--font-family-body); 
+    font-size: 16px;
+    color: var(--Dark-grayish-blue);
+    /* max-width: 95%; */
+    width: 269px;
+    padding-right: 20px;
+    margin-left: 30px;
+    margin-right: 30px;
+    line-height:23px
+}
+
+.item-price{
+    font-family: var(--font-family-Heading);
+    margin-left: 30px;
+    margin-right: 10px;
+    position: relative;
+    color: var(--Dark-cyan);
+    
+}
+.item-price::after{
+    position: absolute;
+    content: "169$";
+    top: 13px;
+    right: 90px;
+    font-size: 14px;
+    color: var(--Dark-grayish-blue);
+    opacity: 0.9;
+    font-family: var(--font-family-body);
+}
+
+.item-price::before{
+    position: absolute;
+    content: "";
+    top: 21px;
+    right: 84px;
+    width: 45px;
+    height: 1px;
+    background-color: var(--Dark-grayish-blue);
+    opacity: 0.5;
+}
+
+.item-cart{
+    background-color: var(--Dark-cyan);
+    display: flex;
+    color: white;
+    width: 260px;
+    align-items: center;
+    border-radius: 10px;
+    font-family: var(--font-family-body);
+
+    justify-content: center;
+    gap: 10px;
+    margin-left: 30px;
+    margin-right: 10px;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+.item-cart:hover{
+    background-color: hsl(158, 31%, 51%);
+}
+
+.item-cart i {
+    color: white;
+    
+    
+}
+
+.desktop-image{
+    display: block;
+}
+
+.mobile-image{
+    display: none;
+}
+@media screen and (max-width: 670px) {
+    body{
+        height: auto;
+        align-items: flex-start;
+    }
+    .main-div {
+        /* background-color: lightgreen; */
+        width: 90%;
+        height: auto;
+        flex-direction: column;
+        margin-top: 25px;
+        margin-bottom: 90px;
+    }
+    .card-image-container{
+        width: 100%;
+        /* max-width: ; */
+        border-radius: 10px;
+    }
+    .card-image-container img{
+        object-fit: contain;
+        border-bottom-left-radius: 0;
+    }
+    
+    .desktop-image{
+        display: none;
+    }
+    
+    .mobile-image{
+        display: block;
+        border-top-right-radius: 10px;
+    }
+    .card-info{
+        width: 100%;
+    }
+    .item-info{
+        width: 90%;
+    }
+    .item-name{
+        margin-left: 30px;
+        margin-right: auto;
+        width: 90%;
+    }
+    .item-price::after{
+        left: 167px;
+    }
+    .item-price::before{
+        left: 160px;
+    }
+    .item-cart{
+        width: 90%;
+        margin-bottom: 30px;
+        margin-right: 30px;
+    }
+}
